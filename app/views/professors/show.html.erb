@@ -1,24 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="card text-center">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @professor.name %>
-</p>
+  <div class="card-header">
+    <%= @professor.name %>
+  </div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @professor.email %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @professor.phone %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @professor.address %>
-</p>
-
-<%= link_to 'Edit', edit_professor_path(@professor) %> |
-<%= link_to 'Back', professors_path %>
+  <div class="card-body">
+    <h5 class="card-title">
+      <%= @professor.email %>
+    </h5>
+    <p class="card-text">
+      <%= @professor.phone %>
+    </p>
+    <p class="card-text">
+      <%= @professor.address %>
+    </p>
+    <%= link_to 'Edit', edit_professor_path(@professor), class: "btn btn-success" %>
+    <%= link_to 'Back', professors_path, class: "btn btn-warning" %>
+  </div>
+</div>

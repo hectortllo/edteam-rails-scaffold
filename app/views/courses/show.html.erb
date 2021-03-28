@@ -1,19 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="my-5 card text-center">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @course.name %>
-</p>
+  <div class="card-header">
+    <%= @course.name %>
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @course.description %>
-</p>
+  <div class="card-body">
+    <p class="card-text">
+      <%= @course.description %>
+    </p>
+    <p class="card-text">
+      <%= @course.professor.name %>
+    </p>
 
-<p>
-  <strong>Professor:</strong>
-  <%= @course.professor_id %>
-</p>
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+    <%= link_to 'Edit', edit_course_path(@course), class: "btn btn-success" %>
+    <%= link_to 'Back', courses_path, class: "btn btn-warning" %>
+  </div>
+</div>

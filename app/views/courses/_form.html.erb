@@ -11,22 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form">
     <%= form.label :professor_id %>
-    <%= form.text_field :professor_id %>
+    <%= collection_select(:course, :professor_id, Professor.all,
+      :id, :name, {}, { :multiple => false, :class => "custom-select"}
+    ) %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Save course", :class => "my-3 btn btn-success" %>
   </div>
 <% end %>
